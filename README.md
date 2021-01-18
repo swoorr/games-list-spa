@@ -26,3 +26,5 @@ npm run build
 - vite
 - vuejs
 - sass
+- axios
+- bootstrap@4
