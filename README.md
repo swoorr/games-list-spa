@@ -22,7 +22,7 @@ if you want to run with php,
 npm run build
 ```
 
-# tech stack
+# tech stack 
 - vite
 - vuejs
 - sass
