@@ -1,0 +1,177 @@
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+$hot: "./assets/hot.svg";
+$bgcolor: #eff0f3;
+body {
+    background: $bgcolor;
+    font-family: "Open Sans", sans-serif;
+}
+
+.hot {
+    background: url($hot);
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+}
+.col-center-block {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamelist {
+    @media (max-width: 340px) {
+        zoom: 80%;
+    }
+    min-height: 100vh;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+
+    .page-title {
+        margin: 20px;
+        padding: 5px;
+        text-align: center;
+        h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: 32px;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .item {
+        background: white;
+        color: #6e798c;
+        padding: 24px;
+        margin-top: 40px;
+        border-radius: 16px;
+        transition: all 500ms;
+        overflow:hidden;
+        position: relative;
+        cursor: pointer;
+        box-shadow: 0 3px 15px rgba(1, 1, 1, 0.08);
+        &:before {
+            top: 0;
+            left: 0;
+            width: 0px;
+            background: black;
+            height: 100%;
+            display: block;
+            content: "";
+            position: absolute;
+            z-index: 0;
+            margin-top: 215px;
+            transition:all 500ms;
+        }
+
+        &:hover {
+            box-shadow: 0 3px 15px rgba(1, 1, 1, 0.14);
+            transform: translateY(-5px) scale(1.01);
+        }
+        &:hover::before {
+            width:1rem;
+            box-shadow:1rem 1rem 4rem black
+        }
+        .head {
+            overflow: hidden;
+            height: 216px;
+            margin: -24px;
+            margin-bottom: 20px;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            background-size: contain;
+            background-repeat-x: no-repeat;
+            background-position: center;
+            background-color: #ddd;
+
+            button.info {
+                all: unset;
+                border: 0;
+                background-color: transparent;
+                background-image: url("./assets/info.svg");
+                background-size: contain;
+                width: 50px;
+                height: 50px;
+                display: block;
+                position: absolute;
+                top: 45px;
+                right: 20px;
+                drop-shadow: 0 1px 5px black;
+            }
+        }
+        .body {
+            h2 {
+                font-family: "DM Serif Display", serif;
+                font-size: 20px;
+                color: black;
+            }
+            p {
+                margin-top: 15px;
+                letter-spacing: 0.3px;
+                font-size: 15px;
+                word-break: break-all;
+                opacity: 0.8;
+            }
+            .info {
+                padding: 25px 0;
+                display: flex;
+                align-content: flex-start;
+                justify-content: flex-start;
+            }
+            .icons,
+            .icons > div {
+                display: flex;
+                align-content: flex-end;
+                justify-content: flex-end;
+                @media (min-width: 700px) {
+                    margin-left: -15px;
+                }
+                > div {
+                    flex-direction: row-reverse;
+                    .savings {
+                        color:#f8593b;
+                        margin-right: 5px;
+                        font-family: "DM Serif Display", serif;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .footer {
+            margin-top: 15px;
+            .row > div:first-child {
+                display: flex;
+                align-content: center;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .price {
+                font-size: 28px;
+                font-family: "DM Serif Display", serif;
+                color: black;
+            }
+            .old-price {
+                font-size: 18px;
+                color: #f8593b;
+                font-family: "DM Serif Display", serif;
+                margin-left: 15px;
+                text-decoration: line-through;
+            }
+            button {
+                background-color: #2ecc71;
+                border-color: #2ecc71;
+                letter-spacing: 0.5px;
+                font-size: 12px;
+                margin-top: 0px;
+                padding: 12px 20px !important;
+                margin-left: -25px;
+            }
+        }
+    }
+}
